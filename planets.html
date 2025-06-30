@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star-wars</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./assets/millennium-falcon.png" type="image/x-icon">
+</head>
+<body>
+    <header>
+
+        <a href="./characters.html">
+            <div class="logo">
+                <img src="./assets/star-wars-logo.png" alt="logo" class="logo-img"/>
+                <span class="logo-text">Characters</span>
+            </div>
+        </a>
+        <a href="./planets.html">
+                <span class="logo-text">Planets</span>
+            </div>
+        </a>
+        <a href="./starships.html">
+            <span class="logo-text">Starships</span>
+        </div>
+    </a>
+
+
+
+        <div class="social-media">
+
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-github"></i>
+            <i class="fa-brands fa-linkedin"></i>
+        </div>
+    </header>
+
+
+
+    <div class="main-container">
+            
+        <h2>Conheca todos os planetas de Star Wars</h2>
+        
+
+            <div class="main-content" id="main-content"></div>
+            
+            <div class="modal" id="modal" onclick="hideModal()">
+                <div class="modal-content" id="modal-content"></div>
+            </div>
+
+            <div class="butttons">
+                <button id="back-button" disabled>Anterior</button>
+                <button id="next-button" disabled>Próximo</button>
+            </div>
+            
+        </div>
+        
+            
+        <footer>
+            <p class="footer-logo">Star Wars Planets</p>
+            <p class="copyright">Desenvolvido por &copy; Bruno Henrique</p>
+        </footer>
+            
+        <script src="https://kit.fontawesome.com/c313bd1a44.js" crossorigin="anonymous"></script>
+        <script src="./planets.js"></script>
+    </body>
+    </html>
