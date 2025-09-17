@@ -1,4 +1,4 @@
-let currentPageUrl = 'https://swapi.dev/api/people/'
+let currentPageUrl = 'https://swapi.py4e.com/api/people/';
 
 
 // const cardWrapper = document.createElement("div");
@@ -28,12 +28,19 @@ async function loadCharacters(url) {
 
         const response = await fetch(url);
         const responseJson = await response.json();
+        let missingImage = false;
 
         responseJson.results.forEach((character) => {
             const card = document.createElement("div")
-            card.style.backgroundImage = `url('https://starwars-visualguide.com/assets/img/characters/${character.url.replace(/\D/g, "")}.jpg')`
+            // Esse characterImages é do utils.js para não poluir o código demais.
+            const imagePath = characterImages[character.name] || "./assets/characters/default.jpg";
+            card.style.backgroundImage = `url('${imagePath}')`;
             card.className = "cards"
 
+            if (imagePath === "./assets/characters/default.jpg") {
+              missingImage = true
+            } 
+            
             const characterNameBG = document.createElement("div")
             characterNameBG.className = "character-name-bg"
 
@@ -52,8 +59,7 @@ async function loadCharacters(url) {
               modalContent.innerHTML = ''
 
               const characterImage = document.createElement("div")
-              characterImage.style.backgroundImage =
-              `url('https://starwars-visualguide.com/assets/img/characters/${character.url.replace(/\D/g, "")}.jpg')`
+              characterImage.style.backgroundImage = `url('${imagePath}')`;
               characterImage.className = "character-image"
 
               const name = document.createElement("span")
@@ -87,6 +93,12 @@ async function loadCharacters(url) {
 
             mainContent.appendChild(card)
         });
+
+        if (missingImage) {
+          alert("As imagens desse projeto foram colocadas manualmente. A API não está renderizando imagens, só informações de cada personagem.");
+        } else {
+          console.log("Imagens renderizadas")
+        }
 
         const nextButton = document.getElementById('next-button')
         const backButton = document.getElementById('back-button')

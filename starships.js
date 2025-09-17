@@ -1,4 +1,4 @@
-let currentPageUrl = 'https://swapi.dev/api/starships/'
+let currentPageUrl = 'https://swapi.py4e.com/api/starships/'
 
 
 // const cardWrapper = document.createElement("div");
